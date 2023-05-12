@@ -1,0 +1,12 @@
+{
+    "ID": "735A3608B5D240E5A44357CCF852E329",
+    "ActionKeyword": "dd",
+    "Name": "DdFlow",
+    "Description": "Plugin for Get the day from the date ",
+    "Author": "Ahmed ElSaeed",
+    "Version": "1.0.0",
+    "Language": "python",
+    "Website": "https://github.com/asmpro7/DdFlow",
+    "IcoPath": "Images\\app.png",
+    "ExecuteFileName": "main.py"
+}
