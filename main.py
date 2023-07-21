@@ -27,7 +27,6 @@ class DdFlow(FlowLauncher):
     def query(self, query):
         output=[]
 
-        query = "wkd 05.01.2023"
         try:
              
             if len(query.strip()) == 0:
@@ -36,8 +35,7 @@ class DdFlow(FlowLauncher):
                     "SubTitle": "Enter a DdFlow action keyword (e.g., range, weekday, unix time etc...)",
                     "IcoPath": "Images/app.png"})
             else:
-                query_parts = query.split()
-                query_parts = list(map(lambda x: x.lower(), query_parts))
+                query_parts = query.lower().split()
 
                 if query_parts[0] in query_actions["weekday"]:
                     dt = None
@@ -62,7 +60,14 @@ class DdFlow(FlowLauncher):
                     # TODO: implement unix time conversion functionality
                     raise Exception
                 
+                else:
+                    raise UnknownActionKeyword(query_parts[0])
+                
         except InvalidDateError as ex:
+            output.append({
+                "Title": str(ex),
+                "IcoPath": "Images/error.png"})
+        except UnknownActionKeyword as ex:
             output.append({
                 "Title": str(ex),
                 "IcoPath": "Images/error.png"})
