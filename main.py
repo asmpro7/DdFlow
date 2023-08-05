@@ -18,6 +18,7 @@ class DdFlow(FlowLauncher):
 
     def query(self, query):
         output=[]
+
         try:
              
             if len(query.strip()) == 0:
@@ -38,13 +39,16 @@ class DdFlow(FlowLauncher):
                     with StrToDate(query_parts[1], query_parts[2]) as datetimes:
                         timedelta = datetimes[0] - datetimes[1]
                         output.append({
-                            "Title": f"{abs(timedelta.days)}",
+                            "Title": f"{abs(timedelta.days)} days",
                             "IcoPath": "images/app.png"
                         })
 
                 elif query_parts[0] in query_actions["unix_time"]:
-                    # TODO: implement unix time conversion functionality
-                    raise Exception
+                    with StrToDate(query_parts[1]) as datetimes:
+                        output.append({
+                            "Title": f"{int(datetimes[0].timestamp())} in Unix time",
+                            "IcoPath": "images/app.png"
+                        })
                 
                 else:
                     raise UnknownActionKeyword(query_parts[0])

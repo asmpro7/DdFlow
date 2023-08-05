@@ -8,7 +8,7 @@ Week_Day={1:["Monday","Images/mon.png"],2:["Tuesday","Images/tue.png"],3:["Wedne
 query_actions = {
     "weekday": ["weekday", "wkd"],
     "range": ["range", "rng"],
-    "unix_time": ["unixtime", "unx"],
+    "unix_time": ["unixtime", "unx", "unix"],
 }
 
 class InvalidDateError(Exception):
