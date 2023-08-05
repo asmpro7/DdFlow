@@ -18,7 +18,6 @@ class DdFlow(FlowLauncher):
 
     def query(self, query):
         output=[]
-
         try:
              
             if len(query.strip()) == 0:
@@ -36,7 +35,12 @@ class DdFlow(FlowLauncher):
                         "IcoPath": f"{Week_Day[datetimes[0].isoweekday()][1]}"})
 
                 elif query_parts[0] in query_actions["range"]:
-                    raise Exception
+                    with StrToDate(query_parts[1], query_parts[2]) as datetimes:
+                        timedelta = datetimes[0] - datetimes[1]
+                        output.append({
+                            "Title": f"{abs(timedelta.days)}",
+                            "IcoPath": "images/app.png"
+                        })
 
                 elif query_parts[0] in query_actions["unix_time"]:
                     # TODO: implement unix time conversion functionality
