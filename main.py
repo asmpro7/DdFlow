@@ -8,6 +8,7 @@ sys.path.append(parent_folder_path)
 sys.path.append(os.path.join(parent_folder_path, 'lib'))
 sys.path.append(os.path.join(parent_folder_path, 'plugin'))
 from datetime import datetime
+from datetime import timedelta
 
 # local imports
 from flowlauncher import FlowLauncher
@@ -21,6 +22,33 @@ query_actions = {
     "range": ["range", "rng"],
     "unix_time": ["unixtime", "unx"],
 }
+
+class StrToDate:
+    """context manager to convert strings into datetime objects
+    using pre-set date formats. Will raise InvalidDateError if
+    one of the dates is not of a particular date.
+    """
+    def __init__(self, *datestrings):
+        self.datestrings = datestrings
+        print(self.datestrings)
+    
+    def __enter__(self):
+        dates = []
+        for datestr in self.datestrings:
+            dt = None
+            for format_str in formats:
+                try:
+                    dt = datetime.strptime(datestr, format_str)
+                except ValueError:
+                    continue
+            if dt is None:
+                raise InvalidDateError()
+            
+            dates.append(dt)
+        return dates
+    
+    def __exit__(self, exc_type, exc_val, traceback):
+        pass
 
 class DdFlow(FlowLauncher):
 
@@ -38,22 +66,12 @@ class DdFlow(FlowLauncher):
                 query_parts = query.lower().split()
 
                 if query_parts[0] in query_actions["weekday"]:
-                    dt = None
-                    for format_str in formats:
-                        try:
-                            dt = datetime.strptime(query_parts[1], format_str)
-                        except ValueError:
-                            continue
+                    with StrToDate(query_parts[1]) as datetimes:
                         output.append({
-                        "Title": f"{Week_Day[dt.isoweekday()][0]}",
-                        "IcoPath": f"{Week_Day[dt.isoweekday()][1]}"})
-                        break
-
-                    if dt is None:
-                        raise InvalidDateError()
+                        "Title": f"{Week_Day[datetimes[0].isoweekday()][0]}",
+                        "IcoPath": f"{Week_Day[datetimes[0].isoweekday()][1]}"})
 
                 elif query_parts[0] in query_actions["range"]:
-                    # TODO: implement range functionality
                     raise Exception
 
                 elif query_parts[0] in query_actions["unix_time"]:
@@ -71,7 +89,8 @@ class DdFlow(FlowLauncher):
             output.append({
                 "Title": str(ex),
                 "IcoPath": "Images/error.png"})
-        except Exception:
+        except Exception as ex:
+            print(ex)
             output.append({
                 "Title": "an unknown error had occured",
                 "IcoPath": "Images/error.png"})
