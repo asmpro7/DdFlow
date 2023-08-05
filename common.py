@@ -21,30 +21,18 @@ class UnknownActionKeyword(Exception):
 
     def __str__(self):
         return "unkown action keyword '" + self.keyword + "'."
-    
-class StrToDate:
-    """context manager to convert strings into datetime objects
-    using pre-set date formats. Will raise InvalidDateError if
-    one of the dates is not of a particular date.
-    """
-    def __init__(self, *datestrings):
-        self.datestrings = datestrings
-        print(self.datestrings)
-    
-    def __enter__(self):
-        dates = []
-        for datestr in self.datestrings:
-            dt = None
-            for format_str in formats:
-                try:
-                    dt = datetime.strptime(datestr, format_str)
-                except ValueError:
-                    continue
-            if dt is None:
-                raise InvalidDateError()
-            
-            dates.append(dt)
-        return dates
-    
-    def __exit__(self, exc_type, exc_val, traceback):
-        pass
+
+def str2date(*datestrings):
+    dates = []
+    for datestr in datestrings:
+        dt = None
+        for format_str in formats:
+            try:
+                dt = datetime.strptime(datestr, format_str)
+            except ValueError:
+                continue
+        if dt is None:
+            raise InvalidDateError()
+        
+        dates.append(dt)
+    return dates

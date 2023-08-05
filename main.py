@@ -18,7 +18,7 @@ class DdFlow(FlowLauncher):
 
     def query(self, query):
         output=[]
-
+        
         try:
              
             if len(query.strip()) == 0:
@@ -30,25 +30,25 @@ class DdFlow(FlowLauncher):
                 query_parts = query.lower().split()
 
                 if query_parts[0] in query_actions["weekday"]:
-                    with StrToDate(query_parts[1]) as datetimes:
-                        output.append({
-                        "Title": f"{Week_Day[datetimes[0].isoweekday()][0]}",
-                        "IcoPath": f"{Week_Day[datetimes[0].isoweekday()][1]}"})
+                    datetimes = str2date(query_parts[1])
+                    output.append({
+                    "Title": f"{Week_Day[datetimes[0].isoweekday()][0]}",
+                    "IcoPath": f"{Week_Day[datetimes[0].isoweekday()][1]}"})
 
                 elif query_parts[0] in query_actions["range"]:
-                    with StrToDate(query_parts[1], query_parts[2]) as datetimes:
-                        timedelta = datetimes[0] - datetimes[1]
-                        output.append({
-                            "Title": f"{abs(timedelta.days)} days",
-                            "IcoPath": "images/app.png"
-                        })
+                    datetimes = str2date(query_parts[1], query_parts[2])
+                    timedelta = datetimes[0] - datetimes[1]
+                    output.append({
+                        "Title": f"{abs(timedelta.days)} days",
+                        "IcoPath": "images/app.png"
+                    })
 
                 elif query_parts[0] in query_actions["unix_time"]:
-                    with StrToDate(query_parts[1]) as datetimes:
-                        output.append({
-                            "Title": f"{int(datetimes[0].timestamp())} in Unix time",
-                            "IcoPath": "images/app.png"
-                        })
+                    datetimes = str2date(query_parts[1])
+                    output.append({
+                        "Title": f"{int(datetimes[0].timestamp())} in Unix time",
+                        "IcoPath": "images/app.png"
+                    })
                 
                 else:
                     raise UnknownActionKeyword(query_parts[0])
