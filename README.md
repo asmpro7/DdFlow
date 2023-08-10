@@ -3,7 +3,7 @@
  <p align="center"> <img src="https://github.com/asmpro7/DdFlow/assets/114514662/d8b86ac7-df95-4de7-b82c-2f4cdb7ffdf6" data-canonical-src="https://github.com/asmpro7/DdFlow/assets/114514662/7a1b9428-0386-4028-92ad-a154c18f7d2c" width="300" height="300" /><p>
 
  <p align="center"> <img src="https://img.shields.io/github/license/asmpro7/DdFlow" alt="GitHub"></p>
-<h2 align="center" id="statis">Plugin to get the weekday from the date 🗓✨</h2>
+<h2 align="center" id="statis">Your all-in-one date plugin 🗓✨</h2>
 </p>
 <h2 id="steps-to-get-started-">steps to get started:</h2>
 <p>1- install the Plugin</p>
@@ -27,3 +27,4 @@
 </p>
 <p align="center"><img src="https://github.com/asmpro7/DdFlow/assets/114514662/cd7fd4f0-e0c7-4995-9d76-090c75734c55" alt="features"></p>
 
+<h3> Getting weekday from date </h3>
