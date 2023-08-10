@@ -13,7 +13,7 @@
 <p>3- Then type in your secondary keyword to specify the feature. More about features <a href="#features-of-the-script">here</a>.</p>
 <strong><pre><code class="lang-bash">dd <span class="hljs-keyword">weekday</span></code></pre></strong>
 <p>3- Enter the Date(s)</p>
-<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/main/.github/images/weekdaynonabbr-example.jpg">
+<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/new-readme-v2/.github/images/weekdaynonabbr-example.jpg">
 
 <p>4- Enjoy✨😎</p>
 
@@ -31,11 +31,12 @@
 
 <h3> Getting weekday from date </h3>
 <p> keywords are: <code>weekday, wkd</code></p>
-<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/main/.github/images/weekday-example.jpg">
+<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/new-readme-v2/.github/images/weekday-example.jpg">
 
 <h3> Getting date range</h3>
 <p> keywords are: <code>range, rng</code></p>
-<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/main/.github/images/daterange-example.jpg">
+<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/new-readme-v2/.github/images/daterange-example.jpg">
 
 <h3> Getting Unix time from date </h3>
-<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/main/.github/images/unixtime-example.jpg">
+<p> keywords are: <code>unixtime, unix, unx</code></p>
+<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/new-readme-v2/.github/images/unixtime-example.jpg">
