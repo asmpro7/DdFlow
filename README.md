@@ -9,9 +9,11 @@
 <p>1- install the Plugin</p>
 <pre><code class="lang-bash">pm <span class="hljs-keyword">install</span> DdFlow
 </code></pre>  
-<p>2- Use the keyword <strong><pre><code class="lang-bash">dd</code></pre></strong></p>
-<p>3- Enter the Date</p>
-<img width="440" alt="msedge_xaACPzMXNi" src="https://github.com/asmpro7/DdFlow/assets/114514662/3707544b-f747-44f7-b147-251be376f0c6">
+<p>2- Use the plugin's keyword <strong><pre><code class="lang-bash">dd</code></pre></strong></p>
+<p>3- Then type in your secondary keyword to specify the feature. More about features <a href="#features-of-the-script">here</a>.</p>
+<strong><pre><code class="lang-bash">dd <span class="hljs-keyword">weekday</span></code></pre></strong>
+<p>3- Enter the Date(s)</p>
+<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/main/.github/images/weekdaynonabbr-example.jpg">
 
 <p>4- Enjoy✨😎</p>
 
@@ -28,3 +30,12 @@
 <p align="center"><img src="https://github.com/asmpro7/DdFlow/assets/114514662/cd7fd4f0-e0c7-4995-9d76-090c75734c55" alt="features"></p>
 
 <h3> Getting weekday from date </h3>
+<p> keywords are: <code>weekday, wkd</code></p>
+<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/main/.github/images/weekday-example.jpg">
+
+<h3> Getting date range</h3>
+<p> keywords are: <code>range, rng</code></p>
+<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/main/.github/images/daterange-example.jpg">
+
+<h3> Getting Unix time from date </h3>
+<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/main/.github/images/unixtime-example.jpg">
