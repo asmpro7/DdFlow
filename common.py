@@ -21,6 +21,13 @@ class UnknownActionKeyword(Exception):
 
     def __str__(self):
         return "unkown action keyword '" + self.keyword + "'."
+    
+class UsageError(Exception):
+    def __init__(self, advice):
+        self.advice = advice
+
+    def __str__(self):
+        return "Usage: " + self.advice
 
 def str2date(*datestrings):
     dates = []
