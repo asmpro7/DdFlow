@@ -39,4 +39,5 @@
 
 <h3> Getting Unix time from date </h3>
 <p> keywords are: <code>unixtime, unix, unx</code></p>
-<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/new-readme-v2/.github/images/unixtime-example.jpg">
+<img width="440" alt="msedge_xaACPzMXNi" src="https://raw.githubusercontent.com/asmpro7/DdFlow/new-readme-v2/.github/images/unixtime-example.jpg"><br><h2>
+Thanks to <a href="https://github.com/Sheshydev">@Sheshydev</a> for adding new features</h2>
